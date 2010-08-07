@@ -1,0 +1,7 @@
+bin/*
+gen/*
+*.dex
+*.apk
+*.class
+log.txt
+*.sql

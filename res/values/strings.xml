@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Star Wars RPG:SE Character Sheet</string>
+    <string-array name="starting_class_array">
+        <item>Jedi</item>
+        <item>Noble</item>
+        <item>Scoundrel</item>
+        <item>Scout</item>
+        <item>Soldier</item>
+    </string-array>
+    <string-array name="species_array">
+        <item>Bothan</item>
+        <item>Cerean</item>
+        <item>Duros</item>
+        <item>Ewok</item>
+        <item>Gamorrean</item>
+        <item>Gungan</item>
+        <item>Human</item>
+        <item>Ithorian</item>
+        <item>Kel Dor</item>
+        <item>Mon Calamari</item>
+        <item>Quarren</item>
+        <item>Rodian</item>
+        <item>Sullustan</item>
+        <item>Trandoshan</item>
+        <item>Twi\'lek</item>
+        <item>Wookiee</item>
+        <item>Zabrak</item>
+    </string-array>
+    <string-array name="destiny_array">
+        <item>None</item>
+        <item>Corruption</item>
+        <item>Destruction</item>
+        <item>Discovery</item>
+        <item>Education</item>
+        <item>Redemption</item>
+        <item>Rescue</item>
+    </string-array>
+    <string name="class_prompt">Select Class</string>
+    <string name="species_prompt">Select Species</string>
+    <string name="destiny_prompt">Select Destiny</string>
+</resources>
