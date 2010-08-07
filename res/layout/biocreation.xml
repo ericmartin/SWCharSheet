@@ -3,6 +3,11 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+    <TextView android:gravity="center_horizontal"
+    	android:layout_height="wrap_content"
+    	android:layout_width="fill_parent"
+    	android:textSize="13pt"
+    	android:text="New Character Creation"/>
     <LinearLayout
     	android:orientation="horizontal"
     	android:layout_width="fill_parent"
@@ -69,4 +74,63 @@
     		android:layout_width="wrap_content"
     		android:prompt="@string/destiny_prompt"/>
    	</LinearLayout>
+   	<LinearLayout
+    	android:orientation="vertical"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    	<TextView android:text="Enter Ability Scores:"
+    		android:layout_height="wrap_content"
+    		android:layout_width="wrap_content"/>
+		<TableLayout
+			android:layout_width="fill_parent"
+			android:stretchColumns="0,1,2,3,4,5" 
+			android:layout_height="fill_parent">
+			<TableRow>
+				<TextView android:text="STR"
+					android:gravity="center"
+					android:padding="3dip"/>
+				<TextView android:text="DEX"
+					android:gravity="center"
+					android:padding="3dip"/>
+				<TextView android:text="CON"
+					android:gravity="center"
+					android:padding="3dip"/>
+				<TextView android:text="INT"
+					android:gravity="center"
+					android:padding="3dip"/>
+				<TextView android:text="WIS"
+					android:gravity="center"
+					android:padding="3dip"/>
+				<TextView android:text="CHA"
+					android:gravity="center"
+					android:padding="3dip"/>
+			</TableRow>
+			<TableRow>
+				<EditText android:id="@+id/STR"
+    				android:layout_width="10dp"
+					android:gravity="center"
+    				android:layout_height="wrap_content"/>
+    			<EditText android:id="@+id/DEX"
+    				android:layout_width="10dp"
+					android:gravity="center"
+    				android:layout_height="wrap_content"/>
+    			<EditText android:id="@+id/CON"
+    				android:layout_width="10dp"
+					android:gravity="center"
+    				android:layout_height="wrap_content"/>
+    			<EditText android:id="@+id/INT"
+    				android:layout_width="10dp"
+					android:gravity="center"
+    				android:layout_height="wrap_content"/>
+    			<EditText android:id="@+id/WIS"
+    				android:layout_width="10dp"
+					android:gravity="center"
+    				android:layout_height="wrap_content"/>
+    			<EditText android:id="@+id/CHA"
+    				android:layout_width="10dp"
+					android:gravity="center"
+    				android:layout_height="wrap_content"/>
+			</TableRow>
+		</TableLayout>
+    </LinearLayout>
 </LinearLayout>
