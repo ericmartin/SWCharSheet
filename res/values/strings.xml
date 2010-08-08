@@ -39,4 +39,7 @@
     <string name="class_prompt">Select Class</string>
     <string name="species_prompt">Select Species</string>
     <string name="destiny_prompt">Select Destiny</string>
+    <string name="skills_prompt">Select Skills</string>
+    <string name="feats_prompt">Select Feats</string>
+    <string name="talents_prompt">Select Talents</string>
 </resources>

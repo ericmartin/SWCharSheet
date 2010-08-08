@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    	<TableRow>
+    		<TextView android:text="Name: "
+	    		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content" 
+    			android:textStyle="bold"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/dispCharName"
+	    		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content" 
+    			android:padding="3dip"/>
+    		<TextView android:text="Player: "
+	    		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:textStyle="bold"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/dispPlayerName"
+	    		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    	</TableRow>
+    </TableLayout>
+    <TableLayout
+    	android:stretchColumns="3"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    	<TableRow android:layout_height="wrap_content">
+    		<TextView android:text="STR: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/STR"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/StrMod"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<View
+    			android:layout_height="1dip"
+    			android:padding="3dip"/>
+    		<TextView android:text="Hit Points: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/HP"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    	</TableRow>
+    	<TableRow>
+    		<TextView android:text="DEX: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/DEX"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/DexMod"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<View
+    			android:layout_height="1dip"
+    			android:padding="3dip"/>
+    		<TextView android:text="Speed: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/SPD"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    	</TableRow>
+    	<TableRow>
+    		<TextView android:text="CON: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/CON"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/ConMod"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<View
+    			android:layout_height="1dip"
+    			android:padding="3dip"/>
+    		<TextView android:text="Initiative: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/INIT"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    	</TableRow>
+    	<TableRow>
+    		<TextView android:text="INT: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/INT"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/IntMod"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<View
+    			android:layout_height="1dip"
+    			android:padding="3dip"/>
+    		<TextView android:text="Perception: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/PERC"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    	</TableRow>
+    	<TableRow>
+    		<TextView android:text="WIS: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/WIS"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/WisMod"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<View
+    			android:layout_height="1dip"
+    			android:padding="3dip"/>
+    		<TextView android:text="Base Atk: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/BATK"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    	</TableRow>
+    	<TableRow>
+    		<TextView android:text="CHA "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/CHA"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/ChaMod"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<View
+    			android:layout_height="1dip"
+    			android:padding="3dip"/>
+    		<TextView android:text="Force Points: "
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    		<TextView android:id="@+id/FP"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="3dip"/>
+    	</TableRow>
+    </TableLayout>
+</LinearLayout>

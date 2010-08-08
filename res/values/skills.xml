@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="adfgme">Star Wars RPG:SE Character Sheet</string>
+    <string-array name="skills_array">
+        <item>Bothan</item>
+        <item>Cerean</item>
+        <item>Duros</item>
+        <item>Ewok</item>
+        <item>Gamorrean</item>
+        <item>Gungan</item>
+        <item>Human</item>
+        <item>Ithorian</item>
+        <item>Kel Dor</item>
+        <item>Mon Calamari</item>
+        <item>Quarren</item>
+        <item>Rodian</item>
+        <item>Sullustan</item>
+        <item>Trandoshan</item>
+        <item>Twi\'lek</item>
+        <item>Wookiee</item>
+        <item>Zabrak</item>
+    </string-array>
+</resources>

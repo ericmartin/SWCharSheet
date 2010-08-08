@@ -21,5 +21,14 @@ public class SWCharSheet extends Activity {
             	startActivity(intent);
             }
         });
+        
+        final Button loadCharButton = (Button) findViewById(R.id.loadCharButton);
+        loadCharButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on clicks
+            	Intent intent = new Intent(getApplicationContext(), LoadCharSheet.class);
+            	startActivity(intent);
+            }
+        });
     }
 }

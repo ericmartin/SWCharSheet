@@ -16,6 +16,16 @@
                 <action android:name="android.intent.action.BIOCREATION" />
             </intent-filter>
         </activity>
+		<activity android:name=".LoadCharSheet">
+            <intent-filter>
+                <action android:name="android.intent.action.LOADCHARSHEET" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DispCharSheet">
+            <intent-filter>
+                <action android:name="android.intent.action.DISPCHARSHEET" />
+            </intent-filter>
+        </activity>
     </application>
 
 
