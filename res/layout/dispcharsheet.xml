@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:id="@+id/ParentWindow"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <TableLayout
+    	android:stretchColumns="1"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content">
     	<TableRow>
@@ -11,10 +13,14 @@
 	    		android:layout_width="wrap_content"
     			android:layout_height="wrap_content" 
     			android:textStyle="bold"
+    			android:textColor="#ffffff"
+    			android:textSize="8pt"
     			android:padding="3dip"/>
     		<TextView android:id="@+id/dispCharName"
 	    		android:layout_width="wrap_content"
     			android:layout_height="wrap_content" 
+    			android:textSize="8pt"
+    			android:textColor="#ffffff"
     			android:padding="3dip"/>
     		<TextView android:text="Player: "
 	    		android:layout_width="wrap_content"
@@ -28,170 +34,574 @@
     	</TableRow>
     </TableLayout>
     <TableLayout
-    	android:stretchColumns="3"
+    	android:stretchColumns="1,3,5"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content">
-    	<TableRow android:layout_height="wrap_content">
-    		<TextView android:text="STR: "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/STR"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/StrMod"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<View
-    			android:layout_height="1dip"
-    			android:padding="3dip"/>
-    		<TextView android:text="Hit Points: "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/HP"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    	</TableRow>
     	<TableRow>
-    		<TextView android:text="DEX: "
+    		<TextView android:text="Class: "
     			android:textStyle="bold"
+    			android:padding="3dip"
     			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/DEX"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:id="@+id/dispCharClass"
+    			android:padding="3dip"
     			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/DexMod"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<View
-    			android:layout_height="1dip"
-    			android:padding="3dip"/>
-    		<TextView android:text="Speed: "
+    			android:layout_height="wrap_content"/>
+    		<TextView android:text="Species: "
     			android:textStyle="bold"
+    			android:padding="3dip"
     			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/SPD"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:id="@+id/dispCharSpecies"
+    			android:padding="3dip"
     			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    	</TableRow>
-    	<TableRow>
-    		<TextView android:text="CON: "
+    			android:layout_height="wrap_content"/>
+    		<TextView android:text="Level: "
     			android:textStyle="bold"
+    			android:padding="3dip"
     			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/CON"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:id="@+id/dispCharLevel"
+    			android:padding="3dip"
     			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/ConMod"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<View
-    			android:layout_height="1dip"
-    			android:padding="3dip"/>
-    		<TextView android:text="Initiative: "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/INIT"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    	</TableRow>
-    	<TableRow>
-    		<TextView android:text="INT: "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/INT"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/IntMod"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<View
-    			android:layout_height="1dip"
-    			android:padding="3dip"/>
-    		<TextView android:text="Perception: "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/PERC"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    	</TableRow>
-    	<TableRow>
-    		<TextView android:text="WIS: "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/WIS"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/WisMod"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<View
-    			android:layout_height="1dip"
-    			android:padding="3dip"/>
-    		<TextView android:text="Base Atk: "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/BATK"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    	</TableRow>
-    	<TableRow>
-    		<TextView android:text="CHA "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/CHA"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/ChaMod"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<View
-    			android:layout_height="1dip"
-    			android:padding="3dip"/>
-    		<TextView android:text="Force Points: "
-    			android:textStyle="bold"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
-    		<TextView android:id="@+id/FP"
-    			android:layout_width="wrap_content"
-    			android:layout_height="wrap_content"
-    			android:padding="3dip"/>
+    			android:layout_height="wrap_content"/>
     	</TableRow>
     </TableLayout>
+    <TableLayout
+    	android:stretchColumns="9"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    	<TableRow>
+    		<TextView android:text="Age:"
+    			android:textStyle="bold"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:id="@+id/dispCharAge"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:text="Gender:"
+    			android:textStyle="bold"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:id="@+id/dispCharGender"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:text="Height:"
+    			android:textStyle="bold"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:id="@+id/dispCharHeight"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:text="Weight:"
+    			android:textStyle="bold"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:id="@+id/dispCharWeight"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:text="Destiny:"
+    			android:textStyle="bold"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView android:id="@+id/dispCharDestiny"
+    			android:textSize="5pt"
+    			android:padding="1dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    	</TableRow>
+    </TableLayout>
+    <TableLayout android:stretchColumns="2"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    	<TableRow>
+	    	<TextView android:text="XP: "
+	    		android:textStyle="bold"
+				android:textSize="5pt"
+		    	android:layout_height="wrap_content"
+	    		android:layout_width="wrap_content"/>
+	    	<TextView android:id="@+id/dispXP"
+	    		android:textSize="5pt"
+		    	android:layout_height="wrap_content"
+	    		android:layout_width="wrap_content"/>
+	    	<View android:layout_height="0dip"/>
+	    	<TextView android:text="Needed for next level: "
+	    		android:textStyle="bold"
+	    		android:textSize="5pt"
+	    		android:layout_height="wrap_content"
+	    		android:layout_width="wrap_content"
+	    		android:gravity="right"/>
+	    	<TextView android:id="@+id/toNextLevel"
+	    		android:textSize="5pt"
+	    		android:layout_height="wrap_content"
+	    		android:layout_width="wrap_content"
+	    		android:gravity="right"/>
+	    </TableRow>
+    </TableLayout>
+    <LinearLayout android:orientation="horizontal"
+	   	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    	<View android:id="@+id/XPBar1"
+	   		android:background="#4444ff"
+    		android:layout_height="4dip"
+    		android:layout_width="0dip"/>
+    	<View android:id="@+id/XPBar2"
+			android:background="#1111aa"
+    		android:layout_height="4dip"
+    		android:layout_width="0dip"/>
+    </LinearLayout>
+    <ScrollView
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:orientation="vertical">
+      <LinearLayout android:orientation="vertical"
+      	android:layout_width="fill_parent"
+      	android:layout_height="fill_parent" android:isScrollContainer="true" android:scrollbarFadeDuration="1" android:scrollbarDefaultDelayBeforeFade="1">
+	    <LinearLayout android:orientation="horizontal"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content">
+    		<TableLayout 
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content">
+    			<TableRow>
+    			<TextView android:text="STR: "
+    				android:textStyle="bold"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			<TextView android:id="@+id/STR"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			</TableRow>
+    			<TableRow>
+    			<TextView android:text="DEX: "
+    				android:textStyle="bold"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			<TextView android:id="@+id/DEX"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			</TableRow>
+    			<TableRow>
+    			<TextView android:text="CON: "
+    				android:textStyle="bold"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			<TextView android:id="@+id/CON"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			</TableRow>
+    			<TableRow>
+    			<TextView android:text="INT: "
+    				android:textStyle="bold"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			<TextView android:id="@+id/INT"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			</TableRow>
+    			<TableRow>
+    			<TextView android:text="WIS: "
+    				android:textStyle="bold"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			<TextView android:id="@+id/WIS"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			</TableRow>
+    			<TableRow>
+    			<TextView android:text="CHA "
+    				android:textStyle="bold"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			<TextView android:id="@+id/CHA"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:padding="2dip"/>
+    			</TableRow>
+    		</TableLayout>
+    		<View android:layout_width="2dip"
+    			android:layout_height="fill_parent"/>
+    		<LinearLayout android:orientation="vertical"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content">
+	    		<LinearLayout android:orientation="horizontal"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content">
+		    		<TextView android:text="Hit Points: "
+		    			android:textStyle="bold"
+		    			android:textColor="#ff4444"
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"/>
+		    		<TextView android:id="@+id/HP"
+		    			android:textColor="#ff4444"
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:orientation="horizontal"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content">
+	    			<TextView android:text="Dmg Thresh: "
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"/>
+	    			<TextView android:id="@+id/dispDmgThresh"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"/>
+	    		</LinearLayout>
+	    		<View android:background="#444444"
+	    			android:layout_width="fill_parent"
+	    			android:padding="3dip"
+	    			android:layout_height="1dip"/>
+	    		<TextView android:text="Defenses:"
+	    			android:textStyle="bold"
+	    			android:layout_height="wrap_content"
+	    			android:layout_width="wrap_content"/>
+	    		<LinearLayout android:orientation="horizontal"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content">
+	    			<TextView android:text="Fort: "
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"/>
+			    	<TextView android:id="@+id/dispFort"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"/>
+	    			<TextView android:text=" Ref: "
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"/>
+	    			<TextView android:id="@+id/dispRef"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"/>
+	    			<TextView android:text=" Will: "
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"/>
+	    			<TextView android:id="@+id/dispWill"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"/>
+	    		</LinearLayout>
+	    	</LinearLayout>
+    		<View android:layout_width="2dip"
+    			android:layout_height="fill_parent"/>
+    		<TableLayout
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content">
+    			<TableRow>
+	    			<TextView android:text="Speed:"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    			<TextView android:id="@+id/SPD"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    		</TableRow>
+	    		<TableRow>
+	    			<TextView android:text="Initiative:"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    			<TextView android:id="@+id/INIT"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    		</TableRow>
+	    		<TableRow>
+	    			<TextView android:text="Perception:"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    			<TextView android:id="@+id/PERC"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    		</TableRow>
+	    		<TableRow>
+	    			<TextView android:text="Base Atk:"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    			<TextView android:id="@+id/BATK"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    		</TableRow>
+	    		<TableRow>
+	    			<TextView android:text="Force Pts:"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    			<TextView android:id="@+id/FP"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content"
+	    				android:padding="2dip"/>
+	    		</TableRow>
+    		</TableLayout>
+	    </LinearLayout>
+	    <View android:background="#555555"
+	    	android:layout_height="1dip"
+	    	android:layout_width="fill_parent"/>
+	    <TextView android:text="Weapons:"
+	    	android:textStyle="bold"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"/>
+	    <View android:background="#555555"
+	    	android:layout_height="1dip"
+	    	android:layout_width="fill_parent"/>
+	    <TextView android:text="Skills Check Bonuses:"
+	    	android:textStyle="bold"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"/>
+	    <TableLayout android:stretchColumns="1,3,5,7"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content">
+	    	<TableRow>
+	    		<LinearLayout android:orientation="vertical"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content">
+	    			<TextView android:text="Acrobatics:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Climb:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Deception:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Endurance:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Gather Info:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:orientation="vertical"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
+	    			<TextView android:id="@+id/dispAcro"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispClimb"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispDec"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispEnd"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispGInfo"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:orientation="vertical"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content">
+	    			<TextView android:text="Initiative:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Jump:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Knowledge:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Knowledge:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Mechanics:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:orientation="vertical"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
+	    			<TextView android:id="@+id/dispInit"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispJump"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispKnow1"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispKnow2"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispMech"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:orientation="vertical"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content">
+	    			<TextView android:text="Percept:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Persuas:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Pilot:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Ride:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Stealth:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:orientation="vertical"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
+	    			<TextView android:id="@+id/dispPerc"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispPers"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispPil"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispRide"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispStlth"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:orientation="vertical"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content">
+	    			<TextView android:text="Survival:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Swim:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Treat Inj:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Use Comp:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:text="Use Force:"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:orientation="vertical"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
+	    			<TextView android:id="@+id/dispSurv"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispSwim"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispTreat"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispUCom"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    			<TextView android:id="@+id/dispUForce"
+	    				android:textStyle="bold"
+	    				android:layout_width="wrap_content"
+	    				android:layout_height="wrap_content" 
+	    				android:textSize="6pt"/>
+	    		</LinearLayout>
+	    	</TableRow>
+	    </TableLayout>
+	  </LinearLayout>  
+	</ScrollView>
 </LinearLayout>

@@ -22,7 +22,7 @@ public class LoadCharSheet extends ListActivity {
 	  lv.setOnItemClickListener(new OnItemClickListener() {
 	    public void onItemClick(AdapterView<?> parent, View view,
 	        int position, long id) {
-	    	//loadCharDB(((ListView) view).getSelectedItemPosition());
+	    	loadCharDB(position);
 	    	Intent intent = new Intent(getApplicationContext(), DispCharSheet.class);
         	startActivity(intent);
 	    }

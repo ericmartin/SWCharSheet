@@ -30,5 +30,6 @@ public class SWCharSheet extends Activity {
             	startActivity(intent);
             }
         });
+        
     }
 }

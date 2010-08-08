@@ -25,11 +25,5 @@
         	android:layout_height="wrap_content"
         	android:padding="10dp"
         	android:text="Load Char"/>
-        <Button
-       		android:id="@+id/exitButton"
-      		android:layout_width="wrap_content"
-        	android:layout_height="wrap_content"
-        	android:padding="10dp"
-        	android:text="Exit"/>
     </LinearLayout>
 </LinearLayout>

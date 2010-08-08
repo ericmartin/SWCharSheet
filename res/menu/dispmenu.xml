@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/adjXP"
+          android:title="Adjust XP" />
+    <item android:id="@+id/adjHP"
+          android:title="Adjust HP" />
+    <item android:id="@+id/adjFP"
+    	  android:title="Spend FP"/>
+</menu>
