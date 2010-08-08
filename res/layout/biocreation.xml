@@ -29,7 +29,9 @@
 	    	android:layout_width="fill_parent"
 	    	android:layout_height="fill_parent" 
 	    	android:scrollbars="vertical" 
-	    	android:fadeScrollbars="true" android:scrollbarFadeDuration="1" android:scrollbarDefaultDelayBeforeFade="1">
+	    	android:fadeScrollbars="true"
+	    	android:scrollbarFadeDuration="1"
+	    	android:scrollbarDefaultDelayBeforeFade="1">
 	    	<View
 	    		android:background="#000000"
 	    		android:layout_width="fill_parent"
@@ -135,28 +137,34 @@
 				</TableRow>
 				<TableRow>
 					<EditText android:id="@+id/createSTR"
+						android:inputType="number"
 		    			android:layout_width="10dp"
 						android:gravity="center"
 		    			android:layout_height="wrap_content"/>
 		    		<EditText android:id="@+id/createDEX"
+		    			android:inputType="number"
 		    			android:layout_width="10dp"
 						android:gravity="center"
 		    			android:layout_height="wrap_content"/>
 		    		<EditText android:id="@+id/createCON"
+		    			android:inputType="number"
 		    			android:layout_width="10dp"
 						android:gravity="center"
 		    			android:layout_height="wrap_content"/>
 		    		<EditText android:id="@+id/createINT"
+		    			android:inputType="number"
 		    			android:layout_width="10dp"
 						android:gravity="center"
 		    			android:layout_height="wrap_content"/>
 		    		<EditText android:id="@+id/createWIS"
+		    			android:inputType="number"
 		    			android:layout_width="10dp"
 						android:gravity="center"
 		    			android:layout_height="wrap_content"/>
 		    		<EditText android:id="@+id/createCHA"
+		    			android:inputType="number"
 		    			android:layout_width="10dp"
-							android:gravity="center"
+						android:gravity="center"
 		    			android:layout_height="wrap_content"/>
 				</TableRow>
 			</TableLayout>
