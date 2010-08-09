@@ -44,6 +44,7 @@ public class DispCharSheet extends Activity {
         TextView xpNext = (TextView) findViewById(R.id.toNextLevel);
         xpNext.setText(Integer.toString(sheet.levelXP+sheet.toNextLevelXP));
         
+        // progress bar stuff
         int screenwidth=320;//(int) findViewById(R.id.ParentWindow).getWidth();
         //TODO: Get getWidth() ^^ to return something other than 0
         
