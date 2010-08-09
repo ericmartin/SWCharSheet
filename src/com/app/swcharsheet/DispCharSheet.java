@@ -54,8 +54,8 @@ public class DispCharSheet extends Activity {
         int xpb1 = (int) (screenwidth*sheet.XPProgress);
         int xpb2 = screenwidth-xpb1;       
         
-        XPBar1.setLayoutParams(new LinearLayout.LayoutParams(xpb1,4));
-        XPBar2.setLayoutParams(new LinearLayout.LayoutParams(xpb2,4));
+        XPBar1.setLayoutParams(new LinearLayout.LayoutParams(xpb1,8));
+        XPBar2.setLayoutParams(new LinearLayout.LayoutParams(xpb2,8));
         
         int[] AbilIds = new int[]{R.id.STR,
         						  R.id.DEX,
