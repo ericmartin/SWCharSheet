@@ -19,30 +19,30 @@ public class DispCharSheet extends Activity {
         characterSheet sheet = new characterSheet();
         
         TextView charName = (TextView) findViewById(R.id.dispCharName);
-        charName.setText(sheet.charName);
         TextView playerName = (TextView) findViewById(R.id.dispPlayerName);
-        playerName.setText(sheet.playerName);
         TextView charClass = (TextView) findViewById(R.id.dispCharClass);
-        charClass.setText(sheet.getCharClass());
         TextView charSpecies = (TextView) findViewById(R.id.dispCharSpecies);
-        charSpecies.setText(sheet.charSpecies);
         TextView charLevel = (TextView) findViewById(R.id.dispCharLevel);
-        charLevel.setText(Integer.toString(sheet.charLevel));
         TextView charAge = (TextView) findViewById(R.id.dispCharAge);
-        charAge.setText(Integer.toString(sheet.charAge));
         TextView charGen = (TextView) findViewById(R.id.dispCharGender);
-        charGen.setText(Character.toString(sheet.charGender));
         TextView charHeight = (TextView) findViewById(R.id.dispCharHeight);
-        charHeight.setText(Double.toString(sheet.charHeight));
         TextView charWeight = (TextView) findViewById(R.id.dispCharWeight);
-        charWeight.setText(Integer.toString(sheet.charWeight));
         TextView charDest = (TextView) findViewById(R.id.dispCharDestiny);
-        charDest.setText(sheet.charDestiny);
- 
         TextView xpProg = (TextView) findViewById(R.id.dispXP);
-        xpProg.setText(Integer.toString(sheet.charXP));
         TextView xpNext = (TextView) findViewById(R.id.toNextLevel);
-        xpNext.setText(Integer.toString(sheet.levelXP+sheet.toNextLevelXP));
+
+        charName.setText(sheet.charName);
+        playerName.setText(sheet.playerName);
+        charClass.setText(sheet.getCharClass());
+        charSpecies.setText(sheet.charSpecies);
+        charLevel.setText(Integer.toString(sheet.charLevel));
+        charAge.setText(Integer.toString(sheet.charAge));
+        charGen.setText(Character.toString(sheet.charGender));
+        charHeight.setText(Double.toString(sheet.charHeight));
+        charWeight.setText(Integer.toString(sheet.charWeight));
+        charDest.setText(sheet.charDestiny);
+        xpProg.setText(Integer.toString(sheet.charXP));
+        xpNext.setText(Integer.toString(sheet.levelXP + sheet.toNextLevelXP));
         
         // progress bar stuff
         int screenwidth=320;//(int) findViewById(R.id.ParentWindow).getWidth();
@@ -51,8 +51,8 @@ public class DispCharSheet extends Activity {
         View XPBar1 = (View) findViewById(R.id.XPBar1);
         View XPBar2 = (View) findViewById(R.id.XPBar2);
         
-        int xpb1 = (int) (screenwidth*sheet.XPProgress);
-        int xpb2 = screenwidth-xpb1;       
+        int xpb1 = (int) (screenwidth * sheet.XPProgress);
+        int xpb2 = screenwidth-xpb1;
         
         XPBar1.setLayoutParams(new LinearLayout.LayoutParams(xpb1,8));
         XPBar2.setLayoutParams(new LinearLayout.LayoutParams(xpb2,8));
@@ -72,28 +72,31 @@ public class DispCharSheet extends Activity {
         }
         
         TextView charHP = (TextView) findViewById(R.id.HP);
-        String hpString= Integer.toString(sheet.charCurrentHealthPoints)+'/'+Integer.toString(characterSheet.charTotalHealthPoints);
+        String hpString = Integer.toString(sheet.charCurrentHealthPoints) + '/'
+        	+ Integer.toString(characterSheet.charTotalHealthPoints);
         charHP.setText(hpString);
         
         TextView dmgThresh = (TextView) findViewById(R.id.dispDmgThresh);
         dmgThresh.setText(Integer.toString(sheet.charDmgThresh));
         
         TextView speed = (TextView) findViewById(R.id.SPD);
-        speed.setText(Integer.toString(sheet.getSpeed()));
         TextView init = (TextView) findViewById(R.id.INIT);
-        init.setText(Integer.toString(sheet.getSkillBonus(5)));
         TextView perc = (TextView) findViewById(R.id.PERC);
-        perc.setText(Integer.toString(sheet.getSkillBonus(10)));
         TextView baseatk = (TextView) findViewById(R.id.BATK);
-        baseatk.setText(Integer.toString(sheet.getBaseAttack()));
         TextView forcep = (TextView) findViewById(R.id.FP);
+
+        speed.setText(Integer.toString(sheet.getSpeed()));
+        init.setText(Integer.toString(sheet.getSkillBonus(5)));
+        perc.setText(Integer.toString(sheet.getSkillBonus(10)));
+        baseatk.setText(Integer.toString(sheet.getBaseAttack()));
         forcep.setText(Integer.toString(sheet.charCurrentForcePoints));
         
         TextView dispFort = (TextView) findViewById(R.id.dispFort);
-        dispFort.setText(Integer.toString(sheet.getDefense(0)));
         TextView dispRef = (TextView) findViewById(R.id.dispRef);
-        dispRef.setText(Integer.toString(sheet.getDefense(1)));
         TextView dispWill = (TextView) findViewById(R.id.dispWill);
+
+        dispFort.setText(Integer.toString(sheet.getDefense(0)));
+        dispRef.setText(Integer.toString(sheet.getDefense(1)));
         dispWill.setText(Integer.toString(sheet.getDefense(2)));
         
         int[] SkillIds = new int[] 

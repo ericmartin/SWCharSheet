@@ -7,6 +7,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/**
+ * @author Mike Rushford
+ * @author Eric Martin
+ * @version 20100809
+ */
 public class SWCharSheet extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {

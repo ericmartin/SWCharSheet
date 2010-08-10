@@ -1,6 +1,11 @@
 package com.app.swcharsheet;
 
 import java.lang.Math;
+/**
+ * @author Mike Rushford
+ * @author Eric Martin
+ * @version 20100809
+ */
 
 public class characterSheet{
 	static String   charName,
@@ -26,7 +31,7 @@ public class characterSheet{
 		charDmgThresh,
 		levelXP,
 		toNextLevelXP,
-		wearingArmor=0;
+		wearingArmor = 0;
 	double XPProgress;
 	int[] modifiers;
 	
@@ -35,22 +40,20 @@ public class characterSheet{
 		
 		initStats();
 		
-		modifiers= new int[6];
+		modifiers = new int[6];
 		modifiers = getMods(abilities);
 		
-		charCurrentHealthPoints=charTotalHealthPoints;
-		charCurrentForcePoints=charTotalForcePoints;
+		charCurrentHealthPoints = charTotalHealthPoints;
+		charCurrentForcePoints = charTotalForcePoints;
 		
-		charDmgThresh=getDefense(0);
+		charDmgThresh = getDefense(0);
 		
-		levelXP=0;
-		for(int j=charLevel; j>0; j--)
-		{
-			levelXP+=(j-1)*1000;
-		}
-		toNextLevelXP=(charLevel-1)*1000;
-		XPProgress=(double) (charXP-levelXP) / (double) toNextLevelXP;
+		levelXP = 0;
+		for(int j = charLevel; j>0; j--)
+			levelXP += (j - 1) * 1000;
 		
+		toNextLevelXP = (charLevel - 1) * 1000;
+		XPProgress = (double) (charXP - levelXP) / (double) toNextLevelXP;	
 	}
 	
 	static private void initStats(){
@@ -99,7 +102,10 @@ public class characterSheet{
 		return mods;
 		}
 	
-	public String getCharClass(){
+	/**
+	 * @return Character Class of the current character
+	 */
+	public String getCharClass() {
 		String thisclass[] = {"Jedi",
 							  "Noble",
 							  "Scoundrel",
@@ -109,7 +115,11 @@ public class characterSheet{
 		return thisclass[charClass];
 	}
 	
-	public int getDefense(int which){
+	/**
+	 * @param which
+	 * @return
+	 */
+	public int getDefense(int which) {
 		int defense, abilmod, levOrArmor, classBonus, misc;
 		switch(which) {
 			case 0:
@@ -134,7 +144,11 @@ public class characterSheet{
 		return defense;
 	}
 	
-	public int getSpeed(){
+	/**
+	 * 
+	 * @return Character's base speed in squares
+	 */
+	public int getSpeed() {
 		return charBaseSpeed;
 	}
 	
