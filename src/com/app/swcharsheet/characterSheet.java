@@ -6,13 +6,12 @@ import java.lang.Math;
  * @author Eric Martin
  * @version 20100809
  */
-
 public class characterSheet{
-	static String   charName,
-					playerName,
-					charSpecies,
-					charDestiny;
-	static char charGender;
+	String  charName,
+			playerName,
+			charSpecies,
+			charDestiny;
+	char charGender;
 	static int  charClass,
 				charAge,
 				charLevel,
@@ -23,8 +22,8 @@ public class characterSheet{
 				charTotalHealthPoints,
 				charXP;
 	static int[] abilities;
-	static int[][] skills;
-	static double charHeight;
+	int[][] skills;
+	double charHeight;
 	int charCurrentForcePoints,
 		charCurrentHealthPoints,
 		charCurrentDestinyPoints,
@@ -35,7 +34,9 @@ public class characterSheet{
 	double XPProgress;
 	int[] modifiers;
 	
-	//Constructor
+	/**
+	 * Default Constructor
+	 */
 	characterSheet(){
 		
 		initStats();
@@ -49,30 +50,30 @@ public class characterSheet{
 		charDmgThresh = getDefense(0);
 		
 		levelXP = 0;
-		for(int j = charLevel; j>0; j--)
+		for(int j = charLevel; j > 0; j--)
 			levelXP += (j - 1) * 1000;
 		
 		toNextLevelXP = (charLevel - 1) * 1000;
 		XPProgress = (double) (charXP - levelXP) / (double) toNextLevelXP;	
 	}
 	
-	static private void initStats(){
-		charName="Zohan";
-		playerName="Brian";
-		charClass=0;
-		charSpecies="Twi\'lek";
-		charLevel=4;
-		charAge=24;
-		charGender='M';
-		charHeight=1.8;
-		charWeight=65;
-		charDestiny="None";
+	private void initStats(){
+		charName = "Zohan";
+		playerName = "Brian";
+		charClass = 0;
+		charSpecies = "Twi\'lek";
+		charLevel = 4;
+		charAge = 24;
+		charGender = 'M';
+		charHeight = 1.8;
+		charWeight = 65;
+		charDestiny = "None";
 		abilities = new int[] {16,15,13,13,15,20};
-		skills=new int[][] {{1,5,0,0},	//0 Acrobatics
+		skills = new int[][] {{1,5,0,0},	//0 Acrobatics
 						    {0,0,0,0},	//1 Climb
 						    {5,0,0,0},	//2 Deception
 						    {2,0,0,0},	//3 Endurance
-						    {5,0,0,0},	//4 Gather Inf
+						    {5,0,0,0},	//4 Gather Information
 						    {1,0,0,0},	//5 Initiative
 						    {0,0,0,0},	//6 Jump
 						    {3,0,0,0},	//7 Knowledge
@@ -89,12 +90,31 @@ public class characterSheet{
 						    {3,0,0,0}, //18 Use Computer
 						    {5,5,0,0}};//19 Use the Force
 		
-		charXP=6291;
-		charTotalHealthPoints=57;
-		charTotalForcePoints=7;
-		charBaseAtk=4;
-		charBaseSpeed=6;
+		charXP = 6291;
+		charTotalHealthPoints = 57;
+		charTotalForcePoints = 7;
+		charBaseAtk = 4;
+		charBaseSpeed = 6;
 	}
+	/**
+	 * @return int Character's age in years
+	 */
+	public int getAge() {
+		return charAge;
+	}
+	
+	public int getBaseAttack(){
+		return charBaseAtk;
+	}
+	
+	//TODO add destinies to javadoc code
+	/**
+	 * @return String Character's destiny [a,b,c,d,e]
+	 */
+	public String getDestiny() {
+		return charDestiny;
+	}
+
 	static private int[] getMods(int[] abils){
 		int[] mods = new int[6];
 		for (int i=0; i<6; i++)
@@ -103,7 +123,7 @@ public class characterSheet{
 		}
 	
 	/**
-	 * @return Character Class of the current character
+	 * @return String class of the current character
 	 */
 	public String getCharClass() {
 		String thisclass[] = {"Jedi",
@@ -113,6 +133,14 @@ public class characterSheet{
 							  "Soldier"};
 		
 		return thisclass[charClass];
+	}
+
+	public int getCharLevel() {
+		return charLevel;
+	}
+	
+	public String getCharName() {
+		return charName;
 	}
 	
 	/**
@@ -143,23 +171,54 @@ public class characterSheet{
 		defense=10+levOrArmor+classBonus+abilmod+misc;
 		return defense;
 	}
+
+	/**
+	 * @return char [M|F]
+	 */
+	public char getGender() {
+		return charGender;
+	}
+
+	/**
+	 * @return double Height in meters
+	 */
+	public double getHeight() {
+		return charHeight;
+	}
+
+	/**
+	 * @return The Player's name associated with this character
+	 */
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public int getSkillBonus(int skill) {
+		return (int) Math.floor (charLevel / 2) + modifiers[skills[skill][0]] + 
+			skills[skill][1] + skills[skill][2] + skills[skill][3];
+	}
 	
 	/**
-	 * 
+	 * @return String character species
+	 */
+	public String getSpecies() {
+		return charSpecies;
+	}
+
+	/** 
 	 * @return Character's base speed in squares
 	 */
 	public int getSpeed() {
 		return charBaseSpeed;
 	}
-	
-	public int getBaseAttack(){
-		return charBaseAtk;
+
+	/**
+	 * @return int weight in kilograms
+	 */
+	public int getWeight() {
+		return charWeight;
 	}
-	
-	public int getSkillBonus(int which){
-		return (int)Math.floor(charLevel/2)+modifiers[skills[which][0]]+skills[which][1]+skills[which][2]+skills[which][3];
-	}
-	
+
 	public void adjHP(int x){
 		charCurrentHealthPoints+=x;
 	}
