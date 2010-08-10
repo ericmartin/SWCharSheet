@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * @author Mike Rushford
+ * @author Eric Martin
+ * @version 20100809
+ */
 public class DispCharSheet extends Activity {
 	
 	@Override
@@ -18,34 +23,34 @@ public class DispCharSheet extends Activity {
         
         characterSheet sheet = new characterSheet();
         
-        TextView charName = (TextView) findViewById(R.id.dispCharName);
-        TextView playerName = (TextView) findViewById(R.id.dispPlayerName);
-        TextView charClass = (TextView) findViewById(R.id.dispCharClass);
-        TextView charSpecies = (TextView) findViewById(R.id.dispCharSpecies);
-        TextView charLevel = (TextView) findViewById(R.id.dispCharLevel);
         TextView charAge = (TextView) findViewById(R.id.dispCharAge);
+        TextView charClass = (TextView) findViewById(R.id.dispCharClass);
+        TextView charDest = (TextView) findViewById(R.id.dispCharDestiny);
         TextView charGen = (TextView) findViewById(R.id.dispCharGender);
         TextView charHeight = (TextView) findViewById(R.id.dispCharHeight);
         TextView charWeight = (TextView) findViewById(R.id.dispCharWeight);
-        TextView charDest = (TextView) findViewById(R.id.dispCharDestiny);
-        TextView xpProg = (TextView) findViewById(R.id.dispXP);
+        TextView charLevel = (TextView) findViewById(R.id.dispCharLevel);
+        TextView charName = (TextView) findViewById(R.id.dispCharName);
+        TextView charSpecies = (TextView) findViewById(R.id.dispCharSpecies);
+        TextView playerName = (TextView) findViewById(R.id.dispPlayerName);
         TextView xpNext = (TextView) findViewById(R.id.toNextLevel);
+        TextView xpProg = (TextView) findViewById(R.id.dispXP);
 
-        charName.setText(sheet.charName);
-        playerName.setText(sheet.playerName);
+        charAge.setText(Integer.toString(sheet.getAge()));
         charClass.setText(sheet.getCharClass());
-        charSpecies.setText(sheet.charSpecies);
-        charLevel.setText(Integer.toString(sheet.charLevel));
-        charAge.setText(Integer.toString(sheet.charAge));
-        charGen.setText(Character.toString(sheet.charGender));
-        charHeight.setText(Double.toString(sheet.charHeight));
-        charWeight.setText(Integer.toString(sheet.charWeight));
-        charDest.setText(sheet.charDestiny);
-        xpProg.setText(Integer.toString(sheet.charXP));
+        charDest.setText(sheet.getDestiny());
+        charGen.setText(Character.toString(sheet.getGender()));
+        charHeight.setText(Double.toString(sheet.getHeight()));
+        charLevel.setText(Integer.toString(sheet.getCharLevel()));
+        charName.setText(sheet.getCharName());
+        charSpecies.setText(sheet.getSpecies());
+        charWeight.setText(Integer.toString(sheet.getWeight()));
+        playerName.setText(sheet.getPlayerName());
         xpNext.setText(Integer.toString(sheet.levelXP + sheet.toNextLevelXP));
-        
+        xpProg.setText(Integer.toString(sheet.charXP));
+
         // progress bar stuff
-        int screenwidth=320;//(int) findViewById(R.id.ParentWindow).getWidth();
+        int screenwidth = 320;//(int) findViewById(R.id.ParentWindow).getWidth();
         //TODO: Get getWidth() ^^ to return something other than 0
         
         View XPBar1 = (View) findViewById(R.id.XPBar1);
@@ -65,7 +70,7 @@ public class DispCharSheet extends Activity {
         						  R.id.CHA};        
         
         TextView tempAbil;// = new TextView;
-        for(int i=0; i<6; i++)
+        for(int i = 0; i<6; i++)
         {
         	tempAbil = (TextView) findViewById(AbilIds[i]);
         	tempAbil.setText(Integer.toString(characterSheet.abilities[i]));
@@ -105,12 +110,11 @@ public class DispCharSheet extends Activity {
         		R.id.dispPerc, R.id.dispPers, R.id.dispPil, R.id.dispRide, R.id.dispStlth,
         		R.id.dispSurv, R.id.dispSwim, R.id.dispTreat, R.id.dispUCom, R.id.dispUForce};
         
-        for(int i=0; i<20; i++)
+        for(int i = 0; i < 20; i++)
         {
         	tempAbil = (TextView) findViewById(SkillIds[i]);
         	tempAbil.setText(Integer.toString(sheet.getSkillBonus(i)));
         }	
-        
 	}
 		
 	@Override
@@ -119,7 +123,6 @@ public class DispCharSheet extends Activity {
 	    inflater.inflate(R.menu.dispmenu, menu);
 	    return true;
 	}
-	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle item selection
@@ -134,6 +137,4 @@ public class DispCharSheet extends Activity {
 	        return super.onOptionsItemSelected(item);
 	    }
 	}
-
 }
-
