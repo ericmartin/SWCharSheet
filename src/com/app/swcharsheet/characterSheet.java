@@ -32,7 +32,7 @@ public class characterSheet{
 		toNextLevelXP,
 		wearingArmor = 0;
 	double XPProgress;
-	int[] modifiers;
+	String[] fieldStats;
 	
 	/**
 	 * Default Constructor
@@ -40,21 +40,32 @@ public class characterSheet{
 	characterSheet(){
 		
 		initStats();
-		
-		modifiers = new int[6];
-		modifiers = getMods(abilities);
-		
+				
 		charCurrentHealthPoints = charTotalHealthPoints;
 		charCurrentForcePoints = charTotalForcePoints;
 		
-		charDmgThresh = getDefense(0);
+		charDmgThresh = getCharDefense(0);
 		
 		levelXP = 0;
 		for(int j = charLevel; j > 0; j--)
 			levelXP += (j - 1) * 1000;
 		
 		toNextLevelXP = (charLevel - 1) * 1000;
-		XPProgress = (double) (charXP - levelXP) / (double) toNextLevelXP;	
+		XPProgress = (double) (charXP - levelXP) / (double) toNextLevelXP;
+		fieldStats= new String[] 
+				        {getCharName(), getPlayerName(),
+						 getCharClass(), getCharSpecies(),
+						 Integer.toString(getCharLevel()), Integer.toString(getCharAge()),
+						 Character.toString(getCharGender()), Double.toString(getCharHeight()),
+						 Integer.toString(getCharWeight()), getCharDestiny(),
+						 Integer.toString(getCharXP()), Integer.toString(getCharNextXP()+levelXP),
+						 Integer.toString(getAbil(0)),Integer.toString(getAbil(2)),Integer.toString(getAbil(3)),
+						 Integer.toString(getAbil(3)),Integer.toString(getAbil(4)),Integer.toString(getAbil(5)),
+						 getHPString(), Integer.toString(getDmgThresh()),
+						 Integer.toString(getCharDefense(0)),Integer.toString(getCharDefense(1)), Integer.toString(getCharDefense(2)),
+						 Integer.toString(getCharSpeed()), Integer.toString(getSkillBonus(5)), Integer.toString(getSkillBonus(10)),
+						 Integer.toString(getCharBaseAttack()),Integer.toString(getCharFP())
+						 };
 	}
 	
 	private void initStats(){
@@ -94,16 +105,72 @@ public class characterSheet{
 		charTotalHealthPoints = 57;
 		charTotalForcePoints = 7;
 		charBaseAtk = 4;
-		charBaseSpeed = 6;
+		charBaseSpeed = 6;	
 	}
+
+	
+	/**
+	 * @param i Index of the ability (STR:0, DEX:1, CON:2, INT:3, WIS:4, CHA:5
+	 * @return Returns the value of the ability
+	 */
+	public int getAbil(int i){
+		return abilities[i];
+	}
+	
+	/**
+	 * @return int Character's current amount of XP
+	 */
+	public int getCharXP(){
+		return charXP;
+	}
+	
+	/**
+	 * @return int Amount of xp to Next Level
+	 */
+	public int getCharNextXP(){
+		return toNextLevelXP;
+	}
+	
+	/**
+	 * @return int Current Health Points
+	 */
+	public int getCharCurrentHP(){
+		return charCurrentHealthPoints;
+	}
+	
+	/**
+	 * @return int Total Character Health Points
+	 */
+	public int getCharTotalHP(){
+		return charTotalHealthPoints;
+	}
+
+	/**
+	 * @return String Current Health Points / Total Health Points
+	 */
+	public String getHPString(){
+		return Integer.toString(getCharCurrentHP())+'/'+Integer.toString(getCharTotalHP());
+	}
+	
+	/**
+	 * @return int Damage Threshold
+	 */
+	public int getDmgThresh(){
+		return charDmgThresh;
+	}
+	
+	public int getCharFP(){
+		return charCurrentForcePoints;
+	}
+	
 	/**
 	 * @return int Character's age in years
 	 */
-	public int getAge() {
+	public int getCharAge() {
 		return charAge;
 	}
 	
-	public int getBaseAttack(){
+	public int getCharBaseAttack(){
 		return charBaseAtk;
 	}
 	
@@ -111,15 +178,17 @@ public class characterSheet{
 	/**
 	 * @return String Character's destiny [a,b,c,d,e]
 	 */
-	public String getDestiny() {
+	public String getCharDestiny() {
 		return charDestiny;
 	}
 
-	static private int[] getMods(int[] abils){
-		int[] mods = new int[6];
-		for (int i=0; i<6; i++)
-			mods[i]=(int) Math.floor(abils[i]/2)-5;
-		return mods;
+	/**
+	 * @param which Index of the ability for which the modifier is requested
+	 * @return int Ability modifier
+	 */
+	public int getMod(int which){
+		int mod =  (int) Math.floor(abilities[which]/2)-5;
+		return mod;
 		}
 	
 	/**
@@ -147,18 +216,18 @@ public class characterSheet{
 	 * @param which
 	 * @return
 	 */
-	public int getDefense(int which) {
+	public int getCharDefense(int which) {
 		int defense, abilmod, levOrArmor, classBonus, misc;
 		switch(which) {
 			case 0:
-				abilmod=modifiers[2];
+				abilmod=getMod(2);
 				//classBonus=
 				break;
 			case 1:
-				abilmod=modifiers[1];
+				abilmod=getMod(1);
 				break;
 			case 2:
-				abilmod=modifiers[4];
+				abilmod=getMod(4);
 				break;
 			default:
 				abilmod=0;
@@ -175,14 +244,14 @@ public class characterSheet{
 	/**
 	 * @return char [M|F]
 	 */
-	public char getGender() {
+	public char getCharGender() {
 		return charGender;
 	}
 
 	/**
 	 * @return double Height in meters
 	 */
-	public double getHeight() {
+	public double getCharHeight() {
 		return charHeight;
 	}
 
@@ -194,28 +263,28 @@ public class characterSheet{
 	}
 
 	public int getSkillBonus(int skill) {
-		return (int) Math.floor (charLevel / 2) + modifiers[skills[skill][0]] + 
+		return (int) Math.floor (charLevel / 2) + getMod(skills[skill][0]) + 
 			skills[skill][1] + skills[skill][2] + skills[skill][3];
 	}
 	
 	/**
 	 * @return String character species
 	 */
-	public String getSpecies() {
+	public String getCharSpecies() {
 		return charSpecies;
 	}
 
 	/** 
 	 * @return Character's base speed in squares
 	 */
-	public int getSpeed() {
+	public int getCharSpeed() {
 		return charBaseSpeed;
 	}
 
 	/**
 	 * @return int weight in kilograms
 	 */
-	public int getWeight() {
+	public int getCharWeight() {
 		return charWeight;
 	}
 

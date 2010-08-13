@@ -138,7 +138,7 @@
 				android:textSize="5pt"
 		    	android:layout_height="wrap_content"
 	    		android:layout_width="wrap_content"/>
-	    	<TextView android:id="@+id/dispXP"
+	    	<TextView android:id="@+id/dispCharXP"
 	    		android:textSize="5pt"
 		    	android:layout_height="wrap_content"
 	    		android:layout_width="wrap_content"/>
@@ -149,7 +149,7 @@
 	    		android:layout_height="wrap_content"
 	    		android:layout_width="wrap_content"
 	    		android:gravity="right"/>
-	    	<TextView android:id="@+id/toNextLevel"
+	    	<TextView android:id="@+id/dispCharToNextLevel"
 	    		android:textSize="5pt"
 	    		android:layout_height="wrap_content"
 	    		android:layout_width="wrap_content"
@@ -187,7 +187,7 @@
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
-    			<TextView android:id="@+id/STR"
+    			<TextView android:id="@+id/dispSTR"
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
@@ -198,7 +198,7 @@
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
-    			<TextView android:id="@+id/DEX"
+    			<TextView android:id="@+id/dispDEX"
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
@@ -209,7 +209,7 @@
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
-    			<TextView android:id="@+id/CON"
+    			<TextView android:id="@+id/dispCON"
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
@@ -220,7 +220,7 @@
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
-    			<TextView android:id="@+id/INT"
+    			<TextView android:id="@+id/dispINT"
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
@@ -231,7 +231,7 @@
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
-    			<TextView android:id="@+id/WIS"
+    			<TextView android:id="@+id/dispWIS"
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
@@ -242,7 +242,7 @@
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
-    			<TextView android:id="@+id/CHA"
+    			<TextView android:id="@+id/dispCHA"
     				android:layout_width="wrap_content"
     				android:layout_height="wrap_content"
     				android:padding="2dip"/>
@@ -261,7 +261,7 @@
 		    			android:textColor="#ff4444"
 		    			android:layout_width="wrap_content"
 		    			android:layout_height="wrap_content"/>
-		    		<TextView android:id="@+id/HP"
+		    		<TextView android:id="@+id/dispHP"
 		    			android:textColor="#ff4444"
 		    			android:layout_width="wrap_content"
 		    			android:layout_height="wrap_content"/>
@@ -319,7 +319,7 @@
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
-	    			<TextView android:id="@+id/SPD"
+	    			<TextView android:id="@+id/dispCharSpeed"
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
@@ -330,7 +330,7 @@
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
-	    			<TextView android:id="@+id/INIT"
+	    			<TextView android:id="@+id/dispCharInit"
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
@@ -341,7 +341,7 @@
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
-	    			<TextView android:id="@+id/PERC"
+	    			<TextView android:id="@+id/dispCharPerc"
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
@@ -352,7 +352,7 @@
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
-	    			<TextView android:id="@+id/BATK"
+	    			<TextView android:id="@+id/dispCharBaseAtk"
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
@@ -363,7 +363,7 @@
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
-	    			<TextView android:id="@+id/FP"
+	    			<TextView android:id="@+id/dispCharFP"
 	    				android:layout_width="wrap_content"
 	    				android:layout_height="wrap_content"
 	    				android:padding="2dip"/>
