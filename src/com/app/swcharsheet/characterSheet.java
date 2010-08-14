@@ -290,11 +290,16 @@ public class characterSheet{
 
 	public void adjHP(int x){
 		charCurrentHealthPoints+=x;
+		if (charCurrentHealthPoints>charTotalHealthPoints){
+			charCurrentHealthPoints=charTotalHealthPoints;
+		}
+		fieldStats[18]=getHPString();
 	}
 	public void adjXP(int x){
 		charXP+=x;
+		XPProgress = (double) (charXP - levelXP) / (double) toNextLevelXP;
 	}
 	public void adjFP(int x){
-		charCurrentForcePoints+=x;
+		charCurrentForcePoints-=x;
 	}
 }
