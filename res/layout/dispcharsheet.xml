@@ -258,11 +258,9 @@
 	    			android:layout_height="wrap_content">
 		    		<TextView android:text="Hit Points: "
 		    			android:textStyle="bold"
-		    			android:textColor="#ff4444"
 		    			android:layout_width="wrap_content"
 		    			android:layout_height="wrap_content"/>
 		    		<TextView android:id="@+id/dispHP"
-		    			android:textColor="#ff4444"
 		    			android:layout_width="wrap_content"
 		    			android:layout_height="wrap_content"/>
 	    		</LinearLayout>

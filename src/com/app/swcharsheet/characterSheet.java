@@ -293,6 +293,9 @@ public class characterSheet{
 		if (charCurrentHealthPoints>charTotalHealthPoints){
 			charCurrentHealthPoints=charTotalHealthPoints;
 		}
+		else if (charCurrentHealthPoints<1){
+			charCurrentHealthPoints=0;
+		}
 		fieldStats[18]=getHPString();
 	}
 	public void adjXP(int x){

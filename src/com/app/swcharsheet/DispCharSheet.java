@@ -241,6 +241,8 @@ public class DispCharSheet extends Activity {
             		sheet.adjHP(0-convertToInt(adjHP));
             		adjHP[0]=adjHP[1]=adjHP[2]=adjHP[3]=0;
             		dialog.dismiss();
+            		TextView tempHP = (TextView) findViewById(R.id.dispHP);
+            		tempHP.setTextColor(0xFFFF0000 + (int)(0x0000FFFF*sheet.charCurrentHealthPoints/sheet.charTotalHealthPoints));
             		drawScreen();
             		break;
         		case (R.id.adjHPCANCEL):
