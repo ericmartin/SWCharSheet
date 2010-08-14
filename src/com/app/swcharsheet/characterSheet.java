@@ -297,5 +297,4 @@ public class characterSheet{
 	public void adjFP(int x){
 		charCurrentForcePoints+=x;
 	}
-	
 }
