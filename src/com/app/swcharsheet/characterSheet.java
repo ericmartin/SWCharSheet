@@ -50,7 +50,7 @@ public class characterSheet{
 		for(int j = charLevel; j > 0; j--)
 			levelXP += (j - 1) * 1000;
 		
-		toNextLevelXP = (charLevel - 1) * 1000;
+		toNextLevelXP = (charLevel) * 1000;
 		XPProgress = (double) (charXP - levelXP) / (double) toNextLevelXP;
 		fieldStats= new String[] 
 				        {getCharName(), getPlayerName(),
@@ -101,7 +101,7 @@ public class characterSheet{
 						    {3,0,0,0}, //18 Use Computer
 						    {5,5,0,0}};//19 Use the Force
 		
-		charXP = 8543;
+		charXP = 6291;
 		charTotalHealthPoints = 57;
 		charTotalForcePoints = 7;
 		charBaseAtk = 4;

@@ -1,6 +1,7 @@
 package com.app.swcharsheet;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,15 +16,25 @@ import android.widget.TextView;
  * @version 20100809
  */
 
+
 public class DispCharSheet extends Activity {
+
+	characterSheet sheet;
+	Dialog  adjHPDialog,
+			adjXPDialog,
+			adjFPDialog;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.dispcharsheet);
         
-        characterSheet sheet = new characterSheet();
         int i;
+        sheet = new characterSheet();
+
+    	adjHPDialog = new Dialog(this);
+    	adjXPDialog = new Dialog(this);
+    	//adjFPDialog = new Dialog(this);
         
         int[] displayFields = new int[] 
                              {R.id.dispCharName,   R.id.dispPlayerName,
@@ -76,13 +87,20 @@ public class DispCharSheet extends Activity {
 	    inflater.inflate(R.menu.dispmenu, menu);
 	    return true;
 	}
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	    case R.id.adjHP:
+	    	adjHPDialog.setContentView(R.layout.adjhp);
+	    	adjHPDialog.setTitle("Adjust HP");
+	    	adjHPDialog.show();
 	    	return true;
 	    case R.id.adjXP:
+	    	adjXPDialog.setContentView(R.layout.adjxp);
+	    	adjXPDialog.setTitle("Adjust XP");
+	    	adjXPDialog.show();
 	    	return true;
 	    case R.id.adjFP:
 	    	return true;
