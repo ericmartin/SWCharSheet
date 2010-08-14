@@ -27,7 +27,7 @@ public class DispCharSheet extends Activity {
 	
 	int displayFields[], SkillIds[];
 	
-	Dialog adjHPDialog, adjXPDialog;
+	Dialog adjHPDialog, adjXPDialog, adjFPDialog;
 		
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class DispCharSheet extends Activity {
 
         adjHPDialog = new Dialog(this);
         adjXPDialog = new Dialog(this);
+        adjFPDialog = new Dialog(this);
         
         adjHP = new int[] {0,0,0,0};
         adjXP = new int[] {0,0,0,0};
@@ -135,6 +136,10 @@ public class DispCharSheet extends Activity {
 	    	adjXPInteractions();
 	    	return true;
 	    case R.id.adjFP:
+	    	adjFPDialog.setContentView(R.layout.spendfp);
+	    	adjFPDialog.setTitle("Spend Force Point?");
+	    	adjFPDialog.show();
+	    	adjFPInteractions();
 	    	return true;
 	    default:
 	        return super.onOptionsItemSelected(item);
@@ -193,6 +198,14 @@ public class DispCharSheet extends Activity {
     	adjXPCANCEL.setOnClickListener(new ButtonClickListener(adjXPDialog, R.id.adjXPCANCEL));
 	}
 	
+	private void adjFPInteractions(){
+		Button OKButton = (Button) adjFPDialog.findViewById(R.id.spendFPOK);
+		Button NOButton = (Button) adjFPDialog.findViewById(R.id.spendFPCANCEL);
+		OKButton.setOnClickListener(new ButtonClickListener(adjFPDialog,R.id.spendFPOK));
+		NOButton.setOnClickListener(new ButtonClickListener(adjFPDialog,R.id.spendFPCANCEL));
+	}
+	
+	//TODO: Possibly consolidate switch into something more compact
 	protected class ButtonClickListener implements OnClickListener {
 		
 		private Dialog dialog;
@@ -289,6 +302,13 @@ public class DispCharSheet extends Activity {
             		break;
         		case (R.id.adjXPCANCEL):
             		adjXP[0]=adjXP[1]=adjXP[2]=adjXP[3]=0;
+        			dialog.dismiss();
+        			break;
+        		case (R.id.spendFPOK):
+        			sheet.adjFP(1);
+        			dialog.dismiss();
+        			drawScreen();
+        		case (R.id.spendFPCANCEL):
         			dialog.dismiss();
         			break;
         		default:

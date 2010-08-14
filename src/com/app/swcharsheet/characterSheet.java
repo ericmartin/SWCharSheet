@@ -300,9 +300,12 @@ public class characterSheet{
 	}
 	public void adjXP(int x){
 		charXP+=x;
+		fieldStats[10]=Integer.toString(charXP);
 		XPProgress = (double) (charXP - levelXP) / (double) toNextLevelXP;
 	}
 	public void adjFP(int x){
 		charCurrentForcePoints-=x;
+		if (charCurrentForcePoints<0){ charCurrentForcePoints=0; }
+		fieldStats[27]=Integer.toString(charCurrentForcePoints);
 	}
 }
