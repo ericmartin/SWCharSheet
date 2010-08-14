@@ -121,7 +121,6 @@ public class DBManager extends Activity {
 	 * Closes SQLite database db
 	 */
 	public void close(){
-
 		db.close();
 	}
 	
@@ -136,10 +135,10 @@ private static class DBManagerOpenHelper extends SQLiteOpenHelper{
 			myDB.execSQL(CREATE_ABILITY);
 			myDB.execSQL(CREATE_CHARACTER);
 			myDB.execSQL(CREATE_FEAT);
-			myDB.execSQL(CREATE_FEAT_PREREQ);
-			myDB.execSQL(CREATE_LEVEL);
-			myDB.execSQL(CREATE_REF_DESTINY);
-			myDB.execSQL(CREATE_SKILL);
+//			myDB.execSQL(CREATE_FEAT_PREREQ);
+//			myDB.execSQL(CREATE_LEVEL);
+//			myDB.execSQL(CREATE_REF_DESTINY);
+//			myDB.execSQL(CREATE_SKILL);
 		}
 		
 		@Override
