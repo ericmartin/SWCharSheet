@@ -26,6 +26,7 @@ public class DBManager extends Activity {
 	public static final String LEVEL_TABLE = "Level";
 	public static final String REF_DESTINY_TABLE = "Ref_Destiny";
 	public static final String SKILL_TABLE = "Skill";
+	public static final String SPECIES_TABLE= "Species";
 	
 	private static final String ABILITY_COL = "Ability";
 	private static final String SCORE_COL = "Score";
@@ -52,13 +53,22 @@ public class DBManager extends Activity {
 	private static final String FEAT_COL = "Feat";
 	private static final String PAGE_COL = "pg";
 	
-	private static final String CREATE_ABILITY = "CREATE TABLE " + ABILITY_TABLE + 
-													"(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+	private static final String CLASS_COL = "Class";
+	private static final String LEVEL_COL = "Level";
+	
+	private static final String SKILL_COL = "Skill";
+	private static final String TRAINED_COL = "Trained";
+	private static final String SF_COL = "SkillFocus";
+	private static final String S_MISCB_COL = "SkillMiscBonus";
+	private static final String S_PG_COL = "SkillPG";
+			
+	private static final String CREATE_ABILITY = "CREATE TABLE " + ABILITY_TABLE
+													+ "(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
 													+ ABILITY_COL + " TEXT NOT NULL, "
 													+ SCORE_COL + " INTEGER NOT NULL);";
 	
-	private static final String CREATE_CHARACTER = "CREATE TABLE " + CHARACTER_TABLE +
-													"(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+	private static final String CREATE_CHARACTER = "CREATE TABLE " + CHARACTER_TABLE
+													+ "(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
 													+ NAME_COL + " TEXT NOT NULL, "
 													+ PLAYERNAME_COL + " TEXT NOT NULL, "
 													+ SPECIES_COL + " INTEGER NOT NULL, " // ref_Species
@@ -79,15 +89,32 @@ public class DBManager extends Activity {
 													+ WIS_COL + " INTEGER NOT NULL, "
 													+ CHA_COL + " INTEGER NOT NULL);";
 	
-	private static final String CREATE_FEAT = "CREATE TABLE " + FEAT_TABLE +
-													"(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+	private static final String CREATE_FEAT = "CREATE TABLE " + FEAT_TABLE
+													+ "(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
 													+ FEAT_COL + " STRING NOT NULL, "
 													+ PAGE_COL + " INTEGER NOT NULL);";
 	
-	private static final String CREATE_FEAT_PREREQ = "";
-	private static final String CREATE_LEVEL = "";
-	private static final String CREATE_REF_DESTINY = "";
-	private static final String CREATE_SKILL = "";
+//	private static final String CREATE_FEAT_PREREQ = "";
+	
+	//TODO ADD Class bonii for level table
+	private static final String CREATE_LEVEL = "CREATE TABLE " + LEVEL_TABLE
+												+ "(" + PRI_KEY + " INTEGER AUTOINCREMENT NOT NULL, "
+												+ CLASS_COL + " INTEGER NOT NULL, " //ref_Class
+												+ LEVEL_COL + " INTEGER NOT NULL);";
+	
+	private static final String CREATE_REF_DESTINY = "CREATE TABLE " + REF_DESTINY_TABLE
+														+ "(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+														+ DESTINY_COL + " STRING NOT NULL);";
+	
+	private static final String CREATE_SKILL = "CREATE TABLE " + SKILL_TABLE +
+												"(" + PRI_KEY + " INTEGER AUTOINCREMENT NOT NULL, "
+												+ SKILL_COL + " TEXT NOT NULL, "
+												+ TRAINED_COL + " INTEGER NOT NULL, " // MAKE 0 | 5
+												+ SF_COL + " INTEGER NOT NULL, " // MAKE 0 | 5
+												+ S_MISCB_COL + " INTEGER NOT NULL, "
+												+ S_PG_COL + " INTEGER);";
+
+	private static final String CREATE_SPECIES = "";
 	
 	private final Context context;
 	private SQLiteDatabase db;
@@ -136,9 +163,10 @@ private static class DBManagerOpenHelper extends SQLiteOpenHelper{
 			myDB.execSQL(CREATE_CHARACTER);
 			myDB.execSQL(CREATE_FEAT);
 //			myDB.execSQL(CREATE_FEAT_PREREQ);
-//			myDB.execSQL(CREATE_LEVEL);
-//			myDB.execSQL(CREATE_REF_DESTINY);
-//			myDB.execSQL(CREATE_SKILL);
+			myDB.execSQL(CREATE_LEVEL);
+			myDB.execSQL(CREATE_REF_DESTINY);
+			myDB.execSQL(CREATE_SKILL);
+			myDB.execSQL(CREATE_SPECIES);
 		}
 		
 		@Override
