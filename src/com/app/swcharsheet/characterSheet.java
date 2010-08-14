@@ -101,7 +101,7 @@ public class characterSheet{
 						    {3,0,0,0}, //18 Use Computer
 						    {5,5,0,0}};//19 Use the Force
 		
-		charXP = 6291;
+		charXP = 8543;
 		charTotalHealthPoints = 57;
 		charTotalForcePoints = 7;
 		charBaseAtk = 4;
