@@ -49,11 +49,11 @@ public class DispCharSheet extends Activity {
        		 			R.id.dispCharLevel,  R.id.dispCharAge,
        		 			R.id.dispCharGender, R.id.dispCharHeight,
        		 			R.id.dispCharWeight, R.id.dispCharDestiny,
-       		 			R.id.dispCharXP,	   R.id.dispCharToNextLevel,
-       		 			R.id.dispSTR,		   R.id.dispDEX, R.id.dispINT,
-       		 			R.id.dispCON, 	   R.id.dispWIS, R.id.dispCHA,
-       		 			R.id.dispHP, 	 	   R.id.dispDmgThresh,
-       		 			R.id.dispFort, 	   R.id.dispRef, R.id.dispWill,
+       		 			R.id.dispCharXP,	 R.id.dispCharToNextLevel,
+       		 			R.id.dispSTR,		 R.id.dispDEX, R.id.dispINT,
+       		 			R.id.dispCON, 	  	 R.id.dispWIS, R.id.dispCHA,
+       		 			R.id.dispHP, 	 	 R.id.dispDmgThresh,
+       		 			R.id.dispFort, 	   	 R.id.dispRef, R.id.dispWill,
        		 			R.id.dispCharSpeed,  R.id.dispCharInit,
        		 			R.id.dispCharPerc,   R.id.dispCharBaseAtk,
        		 			R.id.dispCharFP};
@@ -76,19 +76,22 @@ public class DispCharSheet extends Activity {
         for(i = 0; i < 20; i++){
           	populateField(SkillIds[i], Integer.toString(sheet.getSkillBonus(i)));
           }	
+        drawXPBar();
+	        
+	}
+	
+	public void drawXPBar(){
+        int screenwidth = 320;//(int) findViewById(R.id.ParentWindow).getWidth();
+        //TODO: Get getWidth() ^^ to return something other than 0
 
-	        // progress bar stuff
-	        int screenwidth = 320;//(int) findViewById(R.id.ParentWindow).getWidth();
-	        //TODO: Get getWidth() ^^ to return something other than 0
-	
-	        View XPBar1 = (View) findViewById(R.id.XPBar1);
-	        View XPBar2 = (View) findViewById(R.id.XPBar2);
-	
-	        int xpb1 = (int) (screenwidth * sheet.XPProgress);
-	        int xpb2 = screenwidth-xpb1;
-	
-	        XPBar1.setLayoutParams(new LinearLayout.LayoutParams(xpb1,8));
-	        XPBar2.setLayoutParams(new LinearLayout.LayoutParams(xpb2,8));
+        View XPBar1 = (View) findViewById(R.id.XPBar1);
+        View XPBar2 = (View) findViewById(R.id.XPBar2);
+
+        int xpb1 = (int) (screenwidth * sheet.XPProgress);
+        int xpb2 = screenwidth-xpb1;
+
+        XPBar1.setLayoutParams(new LinearLayout.LayoutParams(xpb1,8));
+        XPBar2.setLayoutParams(new LinearLayout.LayoutParams(xpb2,8));
 	}
 	
 	/**
@@ -219,36 +222,52 @@ public class DispCharSheet extends Activity {
         public void onClick(View v) {
         	switch (id) {
         		case (R.id.incHP1000):
-        			adjHP[0]++;
-        			populateDialogField(adjHPDialog, R.id.adjHPText1000, Integer.toString(adjHP[0]));
+        			if(adjHP[0]<9){ 
+        				adjHP[0]++;
+        				populateDialogField(adjHPDialog, R.id.adjHPText1000, Integer.toString(adjHP[0]));
+        			}
         			break;
         		case (R.id.incHP0100):
-            		adjHP[1]++;
-            		populateDialogField(adjHPDialog, R.id.adjHPText0100, Integer.toString(adjHP[1]));
+        			if(adjHP[1]<9){ 
+        				adjHP[1]++; 
+            			populateDialogField(adjHPDialog, R.id.adjHPText0100, Integer.toString(adjHP[1]));
+        			}
             		break;
             	case (R.id.incHP0010):
-            		adjHP[2]++;
-            		populateDialogField(adjHPDialog, R.id.adjHPText0010, Integer.toString(adjHP[2]));
+            		if(adjHP[2]<9){
+            			adjHP[2]++; 
+            			populateDialogField(adjHPDialog, R.id.adjHPText0010, Integer.toString(adjHP[2]));
+            		}
             		break;
             	case (R.id.incHP0001):
-            		adjHP[3]++;
-            		populateDialogField(adjHPDialog, R.id.adjHPText0001, Integer.toString(adjHP[3]));
+            		if(adjHP[3]<9){ 
+            			adjHP[3]++; 
+            			populateDialogField(adjHPDialog, R.id.adjHPText0001, Integer.toString(adjHP[3]));
+            		}
             		break;
             	case (R.id.decHP1000):
-        			if(adjHP[0]>0){ adjHP[0]--;}
-        			populateDialogField(adjHPDialog, R.id.adjHPText1000, Integer.toString(adjHP[0]));
+        			if(adjHP[0]>0){ 
+        				adjHP[0]--;
+        				populateDialogField(adjHPDialog, R.id.adjHPText1000, Integer.toString(adjHP[0]));
+        			}
         			break;
         		case (R.id.decHP0100):
-        			if(adjHP[1]>0){ adjHP[1]--;}
-            		populateDialogField(adjHPDialog, R.id.adjHPText0100, Integer.toString(adjHP[1]));
+        			if(adjHP[1]>0){ 
+        				adjHP[1]--;
+            			populateDialogField(adjHPDialog, R.id.adjHPText0100, Integer.toString(adjHP[1]));
+        			}
             		break;
             	case (R.id.decHP0010):
-            		if(adjHP[2]>0){ adjHP[2]--;}
-            		populateDialogField(adjHPDialog, R.id.adjHPText0010, Integer.toString(adjHP[2]));
+            		if(adjHP[2]>0){ 
+            			adjHP[2]--;
+            			populateDialogField(adjHPDialog, R.id.adjHPText0010, Integer.toString(adjHP[2]));
+            		}
             		break;
             	case (R.id.decHP0001):
-            		if(adjHP[3]>0){ adjHP[3]--;}
-            		populateDialogField(adjHPDialog, R.id.adjHPText0001, Integer.toString(adjHP[3]));
+            		if(adjHP[3]>0){ 
+            			adjHP[3]--;
+            			populateDialogField(adjHPDialog, R.id.adjHPText0001, Integer.toString(adjHP[3]));
+            		}
             		break;
             	case (R.id.adjHPOK):
             		sheet.adjHP(0-convertToInt(adjHP));
@@ -256,43 +275,59 @@ public class DispCharSheet extends Activity {
             		dialog.dismiss();
             		TextView tempHP = (TextView) findViewById(R.id.dispHP);
             		tempHP.setTextColor(0xFFFF0000 + (int)(0x0000FFFF*sheet.getCharCurrentHP()/sheet.getCharTotalHP()));
-            		drawScreen();
+            		tempHP.setText(sheet.getHPString());
             		break;
         		case (R.id.adjHPCANCEL):
             		adjHP[0]=adjHP[1]=adjHP[2]=adjHP[3]=0;
         			dialog.dismiss();
         			break;
         		case (R.id.incXP1000):
-        			adjXP[0]++;
-        			populateDialogField(adjXPDialog, R.id.adjXPText1000, Integer.toString(adjXP[0]));
+        			if(adjXP[0]<9){ 
+        				adjXP[0]++;
+        				populateDialogField(adjXPDialog, R.id.adjXPText1000, Integer.toString(adjXP[0]));
+        			}
         			break;
         		case (R.id.incXP0100):
-            		adjXP[1]++;
-            		populateDialogField(adjXPDialog, R.id.adjXPText0100, Integer.toString(adjXP[1]));
+        			if(adjXP[1]<9){ 
+        				adjXP[1]++; 
+            			populateDialogField(adjXPDialog, R.id.adjXPText0100, Integer.toString(adjXP[1]));
+        			}
             		break;
             	case (R.id.incXP0010):
-            		adjXP[2]++;
-            		populateDialogField(adjXPDialog, R.id.adjXPText0010, Integer.toString(adjXP[2]));
+            		if(adjXP[2]<9){
+            			adjXP[2]++; 
+            			populateDialogField(adjXPDialog, R.id.adjXPText0010, Integer.toString(adjXP[2]));
+            		}
             		break;
             	case (R.id.incXP0001):
-            		adjXP[3]++;
-            		populateDialogField(adjXPDialog, R.id.adjXPText0001, Integer.toString(adjXP[3]));
+            		if(adjXP[3]<9){ 
+            			adjXP[3]++; 
+            			populateDialogField(adjXPDialog, R.id.adjXPText0001, Integer.toString(adjXP[3]));
+            		}
             		break;
             	case (R.id.decXP1000):
-        			if(adjXP[0]>0){ adjXP[0]--;}
-        			populateDialogField(adjXPDialog, R.id.adjXPText1000, Integer.toString(adjXP[0]));
+        			if(adjXP[0]>0){ 
+        				adjXP[0]--;
+        				populateDialogField(adjXPDialog, R.id.adjXPText1000, Integer.toString(adjXP[0]));
+        			}
         			break;
         		case (R.id.decXP0100):
-        			if(adjXP[1]>0){ adjXP[1]--;}
-            		populateDialogField(adjXPDialog, R.id.adjXPText0100, Integer.toString(adjXP[1]));
+        			if(adjXP[1]>0){ 
+        				adjXP[1]--;
+            			populateDialogField(adjXPDialog, R.id.adjXPText0100, Integer.toString(adjXP[1]));
+        			}
             		break;
             	case (R.id.decXP0010):
-            		if(adjXP[2]>0){ adjXP[2]--;}
-            		populateDialogField(adjXPDialog, R.id.adjXPText0010, Integer.toString(adjXP[2]));
+            		if(adjXP[2]>0){ 
+            			adjXP[2]--;
+            			populateDialogField(adjXPDialog, R.id.adjXPText0010, Integer.toString(adjXP[2]));
+            		}
             		break;
             	case (R.id.decXP0001):
-            		if(adjXP[3]>0){ adjXP[3]--;}
-            		populateDialogField(adjXPDialog, R.id.adjXPText0001, Integer.toString(adjXP[3]));
+            		if(adjXP[3]>0){ 
+            			adjXP[3]--;
+            			populateDialogField(adjXPDialog, R.id.adjXPText0001, Integer.toString(adjXP[3]));
+            		}
             		break;
             	case (R.id.adjXPOK):
             		sheet.adjXP(convertToInt(adjXP));

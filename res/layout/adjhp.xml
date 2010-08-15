@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/adjHPDialog"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal">
+    <TextView android:text="Adjust Health Points by:"
+    	android:layout_height="wrap_content"
+    	android:layout_width="wrap_content"
+    	android:gravity="center_horizontal"/>
+    <TableLayout
+    	android:layout_width="200dip"
+    	android:layout_height="wrap_content"
+    	android:gravity="center_horizontal">
+    	<TableRow>
+    		<Button android:id="@+id/incHP1000"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"
+    			android:text="+"/>
+    		<Button android:id="@+id/incHP0100"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"
+    			android:text="+"/>
+    		<Button android:id="@+id/incHP0010"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"
+    			android:text="+"/>
+    		<Button android:id="@+id/incHP0001"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"
+    			android:text="+"/>
+    	</TableRow>
+    	<TableRow>
+    		<TextView android:id="@+id/adjHPText1000"
+    			android:text="0"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp" 
+    			android:textSize="10pt"
+    			android:layout_gravity="center_horizontal"/>
+    		<TextView android:id="@+id/adjHPText0100"
+    			android:text="0"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"  
+    			android:textSize="10pt"
+    			android:layout_gravity="center_horizontal"/>
+    		<TextView android:id="@+id/adjHPText0010"
+    			android:text="0"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"  
+    			android:textSize="10pt"
+    			android:layout_gravity="center_horizontal"/>
+    		<TextView android:id="@+id/adjHPText0001"
+    			android:text="0"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"  
+    			android:textSize="10pt"
+    			android:layout_gravity="center_horizontal"/>
+    	</TableRow>
+    	<TableRow>
+    		<Button android:id="@+id/decHP1000"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"
+    			android:text="-"/>
+    		<Button android:id="@+id/decHP0100"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"
+    			android:text="-"/>
+    		<Button android:id="@+id/decHP0010"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"
+    			android:text="-"/>
+    		<Button android:id="@+id/decHP0001"
+    			android:layout_height="wrap_content"
+    			android:layout_width="50dp"
+    			android:text="-"/>
+    	</TableRow>
+    </TableLayout>
+    <View android:layout_width="fill_parent"
+    	android:layout_height="10dip"/>
+    <LinearLayout android:orientation="horizontal"
+    	android:layout_height="wrap_content"
+    	android:layout_width="fill_parent"
+    	android:gravity="center_horizontal">
+		    <Button android:id="@+id/adjHPOK"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:text="OK"/>
+		    <Button android:id="@+id/adjHPCANCEL"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:text="Cancel"/>
+    </LinearLayout>
+</LinearLayout>
