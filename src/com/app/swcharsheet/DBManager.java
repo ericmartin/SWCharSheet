@@ -96,15 +96,15 @@ public class DBManager extends Activity {
 	
 //	private static final String CREATE_FEAT_PREREQ = "";
 	
-	//TODO ADD Class bonii for level table
+	//TODO ADD Class bonuses for level table
 	private static final String CREATE_LEVEL = "CREATE TABLE " + LEVEL_TABLE
 												+ "(" + PRI_KEY + " INTEGER AUTOINCREMENT NOT NULL, "
 												+ CLASS_COL + " INTEGER NOT NULL, " //ref_Class
 												+ LEVEL_COL + " INTEGER NOT NULL);";
 	
 	private static final String CREATE_REF_DESTINY = "CREATE TABLE " + REF_DESTINY_TABLE
-														+ "(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-														+ DESTINY_COL + " STRING NOT NULL);";
+													+ "(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+													+ DESTINY_COL + " STRING NOT NULL);";
 	
 	private static final String CREATE_SKILL = "CREATE TABLE " + SKILL_TABLE +
 												"(" + PRI_KEY + " INTEGER AUTOINCREMENT NOT NULL, "
