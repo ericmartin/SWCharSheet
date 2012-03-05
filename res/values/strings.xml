@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Star Wars RPG:SE Character Sheet</string>
+    <string name="class_prompt">Select Class</string>
+    <string name="species_prompt">Select Species</string>
+    <string name="destiny_prompt">Select Destiny</string>
+    <string name="skills_prompt">Select Skills</string>
+    <string name="feats_prompt">Select Feats</string>
+    <string name="talents_prompt">Select Talents</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="player">Player: </string>
+    <string name="name">Name: </string>
+    <string name="char_class">Class: </string>
+    <string name="species">Species: </string>
+    <string name="hp">HP: </string>
+    <string name="gender">Gender: </string>
+    <string name="destiny">Destiny: </string>
+    <string name="str">STR</string>
+    <string name="dex">DEX</string>
+    <string name="con">CON</string>
+    <string name="abil_int">INT</string>
+    <string name="wis">WIS</string>
+    <string name="cha">CHA</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="prompt_spendFP">Definitely spend Force Point?</string>
+    <string name="zero">0</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="adj_Health">Adjust Health Points by: </string>
+    <string name="adj_Exp">Adjust Experience Points by: </string>
     <string-array name="starting_class_array">
         <item>Jedi</item>
         <item>Noble</item>
@@ -36,10 +65,4 @@
         <item>Redemption</item>
         <item>Rescue</item>
     </string-array>
-    <string name="class_prompt">Select Class</string>
-    <string name="species_prompt">Select Species</string>
-    <string name="destiny_prompt">Select Destiny</string>
-    <string name="skills_prompt">Select Skills</string>
-    <string name="feats_prompt">Select Feats</string>
-    <string name="talents_prompt">Select Talents</string>
 </resources>

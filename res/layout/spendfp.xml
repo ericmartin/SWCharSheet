@@ -5,20 +5,20 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_horizontal">
-    <TextView android:text="Definitely spend Force Point?"
+    <TextView android:text="@string/prompt_spendFP"
     	android:layout_height="wrap_content"
     	android:layout_width="wrap_content"
     	android:gravity="center_horizontal"/>
-    <LinearLayout orientation="horizontal"
+    <LinearLayout android:orientation="horizontal"
     	android:layout_height="wrap_content"
     	android:layout_width="wrap_content"
     	android:gravity="center_horizontal">
     	<Button android:id="@+id/spendFPOK"
-	    	android:text="Yes"
+	    	android:text="@string/yes"
     		android:layout_height="wrap_content"
     		android:layout_width="wrap_content"/>
     	<Button android:id="@+id/spendFPCANCEL"
-    		android:text="No"
+    		android:text="@string/no"
     		android:layout_height="wrap_content"
     		android:layout_width="wrap_content"/>
     </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_horizontal">
-    <TextView android:text="Adjust Health Points by:"
+    <TextView android:text="@string/adj_Health"
     	android:layout_height="wrap_content"
     	android:layout_width="wrap_content"
     	android:gravity="center_horizontal"/>
@@ -17,41 +17,41 @@
     		<Button android:id="@+id/incHP1000"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"
-    			android:text="+"/>
+    			android:text="@string/plus"/>
     		<Button android:id="@+id/incHP0100"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"
-    			android:text="+"/>
+    			android:text="@string/plus"/>
     		<Button android:id="@+id/incHP0010"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"
-    			android:text="+"/>
+    			android:text="@string/plus"/>
     		<Button android:id="@+id/incHP0001"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"
-    			android:text="+"/>
+    			android:text="@string/plus"/>
     	</TableRow>
     	<TableRow>
     		<TextView android:id="@+id/adjHPText1000"
-    			android:text="0"
+    			android:text="@string/zero"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp" 
     			android:textSize="10pt"
     			android:layout_gravity="center_horizontal"/>
     		<TextView android:id="@+id/adjHPText0100"
-    			android:text="0"
+    			android:text="@string/zero"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"  
     			android:textSize="10pt"
     			android:layout_gravity="center_horizontal"/>
     		<TextView android:id="@+id/adjHPText0010"
-    			android:text="0"
+    			android:text="@string/zero"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"  
     			android:textSize="10pt"
     			android:layout_gravity="center_horizontal"/>
     		<TextView android:id="@+id/adjHPText0001"
-    			android:text="0"
+    			android:text="@string/zero"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"  
     			android:textSize="10pt"
@@ -61,19 +61,19 @@
     		<Button android:id="@+id/decHP1000"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"
-    			android:text="-"/>
+    			android:text="@string/minus"/>
     		<Button android:id="@+id/decHP0100"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"
-    			android:text="-"/>
+    			android:text="@string/minus"/>
     		<Button android:id="@+id/decHP0010"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"
-    			android:text="-"/>
+    			android:text="@string/minus"/>
     		<Button android:id="@+id/decHP0001"
     			android:layout_height="wrap_content"
     			android:layout_width="50dp"
-    			android:text="-"/>
+    			android:text="@string/minus"/>
     	</TableRow>
     </TableLayout>
     <View android:layout_width="fill_parent"
@@ -85,10 +85,10 @@
 		    <Button android:id="@+id/adjHPOK"
 		    	android:layout_width="wrap_content"
 		    	android:layout_height="wrap_content"
-		    	android:text="OK"/>
+		    	android:text="@string/ok"/>
 		    <Button android:id="@+id/adjHPCANCEL"
 		    	android:layout_width="wrap_content"
 		    	android:layout_height="wrap_content"
-		    	android:text="Cancel"/>
+		    	android:text="@string/cancel"/>
     </LinearLayout>
 </LinearLayout>
