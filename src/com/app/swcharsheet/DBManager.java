@@ -16,7 +16,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 public class DBManager extends Activity {
 	private static final String DB_NAME = "SWCharSheet.db";
 	private static final String PRI_KEY = "_ID";
-	private static final int DB_VERSION = 1;
+	private static final int DB_VERSION = 2;
 	
 	// yes I need all of these variables, they help to eliminate typos and save a lot of headaches
 	public static final String ABILITY_TABLE = "Ability";
@@ -39,7 +39,6 @@ public class DBManager extends Activity {
 	private static final String WEIGHT_COL = "Weight";
 	private static final String DESTINY_COL = "Destiny";
 	private static final String HP_COL = "HP";
-	private static final String SPEED_COL = "Speed";
 	private static final String CONDITION_COL = "Condition";
 	private static final String DESTINYPTS_COL = "DestinyPts";
 	private static final String FORCEPTS_COL = "ForcePTS";
@@ -61,6 +60,11 @@ public class DBManager extends Activity {
 	private static final String SF_COL = "SkillFocus";
 	private static final String S_MISCB_COL = "SkillMiscBonus";
 	private static final String S_PG_COL = "SkillPG";
+
+	// SPECIES TABLE
+	private static final String SIZE_COL = "Size";
+	private static final String SPEED_COL = "Speed";
+
 			
 	private static final String CREATE_ABILITY = "CREATE TABLE " + ABILITY_TABLE
 													+ "(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -78,7 +82,6 @@ public class DBManager extends Activity {
 													+ WEIGHT_COL + " FLOAT NOT NULL, "
 													+ DESTINY_COL + " INTEGER, " // ref_Destiny
 													+ HP_COL + " INTEGER NOT NULL, "
-													+ SPEED_COL + " INTEGER NOT NULL, "
 													+ CONDITION_COL + " INTEGER NOT NULL, " // ref_Condition
 													+ DESTINYPTS_COL + " INTEGER, "
 													+ FORCEPTS_COL + " INTEGER NOT NULL, "
@@ -114,7 +117,20 @@ public class DBManager extends Activity {
 												+ S_MISCB_COL + " INTEGER NOT NULL, "
 												+ S_PG_COL + " INTEGER);";
 
-	private static final String CREATE_SPECIES = "";
+	// SPECIES TABLE.  STR, DEX, ETC ARE + / - MODIFIERS
+	//TODO: ADD OTHER BONUSES, ETC
+	private static final String CREATE_SPECIES = "CREATE TABLE " + SPECIES_TABLE +
+												"(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+												+ SPECIES_COL + " TEXT NOT NULL, "
+												+ SIZE_COL + " TEXT NOT NULL,"
+												+ SPEED_COL + " INTEGER NOT NULL, "
+												+ STR_COL + " INTEGER NOT NULL, "
+												+ DEX_COL + " INTEGER NOT NULL, "
+												+ CON_COL + " INTEGER NOT NULL, "
+												+ INT_COL + " INTEGER NOT NULL, "
+												+ WIS_COL + " INTEGER NOT NULL, "
+												+ CHA_COL + " INTEGER NOT NULL);";
+;
 	
 	private final Context context;
 	private SQLiteDatabase db;
