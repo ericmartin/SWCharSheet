@@ -13,10 +13,13 @@ import android.widget.Button;
  * @version 20100809
  */
 public class SWCharSheet extends Activity {
+	public static DBManager managedDatabase;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        managedDatabase = new DBManager(this);
+        managedDatabase.open();
         
         final Button newCharButton = (Button) findViewById(R.id.newCharButton);
         newCharButton.setOnClickListener(new OnClickListener() {
@@ -37,4 +40,9 @@ public class SWCharSheet extends Activity {
         });
         
     }
+	@Override
+	public void onDestroy() {
+		managedDatabase.close();
+		super.onDestroy();
+	}
 }

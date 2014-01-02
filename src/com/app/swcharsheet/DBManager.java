@@ -98,7 +98,7 @@ public class DBManager extends Activity {
 	
 	//TODO ADD Class bonuses for level table
 	private static final String CREATE_LEVEL = "CREATE TABLE " + LEVEL_TABLE
-												+ "(" + PRI_KEY + " INTEGER AUTOINCREMENT NOT NULL, "
+												+ "(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
 												+ CLASS_COL + " INTEGER NOT NULL, " //ref_Class
 												+ LEVEL_COL + " INTEGER NOT NULL);";
 	
@@ -107,7 +107,7 @@ public class DBManager extends Activity {
 													+ DESTINY_COL + " STRING NOT NULL);";
 	
 	private static final String CREATE_SKILL = "CREATE TABLE " + SKILL_TABLE +
-												"(" + PRI_KEY + " INTEGER AUTOINCREMENT NOT NULL, "
+												"(" + PRI_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
 												+ SKILL_COL + " TEXT NOT NULL, "
 												+ TRAINED_COL + " INTEGER NOT NULL, " // MAKE 0 | 5
 												+ SF_COL + " INTEGER NOT NULL, " // MAKE 0 | 5
